@@ -1,7 +1,7 @@
 package com.techbank.account.cmd;
 
-import com.techbank.account.cmd.api.commands.CommandHandler;
-import com.techbank.account.cmd.api.commands.OpenAccountCommand;
+import com.techbank.account.cmd.api.commands.*;
+import com.techbank.account.common.events.FundsDepositedEvent;
 import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -25,8 +25,8 @@ public class CommandApplication {
 	@PostConstruct
 	public void registerHandlers(){
 		commandDispatcher.registerHandler(OpenAccountCommand.class, commandHandler::handle);
-		commandDispatcher.registerHandler(OpenAccountCommand.class, commandHandler::handle);
-		commandDispatcher.registerHandler(OpenAccountCommand.class, commandHandler::handle);
-		commandDispatcher.registerHandler(OpenAccountCommand.class, commandHandler::handle);
+		commandDispatcher.registerHandler(DepositFundsCommand.class, commandHandler::handle);
+		commandDispatcher.registerHandler(WithdrawFundsCommand.class, commandHandler::handle);
+		commandDispatcher.registerHandler(CloseAccountCommand.class, commandHandler::handle);
 	}
 }
