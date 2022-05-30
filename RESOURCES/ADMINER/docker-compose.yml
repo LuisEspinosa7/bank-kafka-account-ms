@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  adminer:
+    image: adminer:latest
+    restart: always
+    container_name: "adminer-container"
+    hostname: adminer-host
+    environment:
+      - ADMINER_DEFAULT_SERVER=mysql-container
+    ports:
+      - "8080:8080"
+
+networks:
+  default:
+    external:
+      name: techbankNet

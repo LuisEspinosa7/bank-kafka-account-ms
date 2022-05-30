@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  account-commands:
+    image: accounts-commands-ms:1.0
+    restart: always
+    container_name: "accounts-commands"
+    hostname: accounts-commands-host
+    ports:
+      - "5000:5000"
+   
+networks:
+  default:
+    external:
+      name: techbankNet

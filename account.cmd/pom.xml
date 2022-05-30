@@ -74,6 +74,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>accounts-commands-ms</finalName>
 	</build>
 
 </project>

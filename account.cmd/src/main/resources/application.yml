@@ -4,11 +4,13 @@ server:
 spring:
   data:
     mongodb:
-      host: localhost
+      #host: localhost # Develpment
+      host: mongodb # Docker deployment
       port: 27017
       database: bankAccount
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      #bootstrap-servers: localhost:9092 # Develpment
+      bootstrap-servers: kafka:9092 # Docker deployment
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

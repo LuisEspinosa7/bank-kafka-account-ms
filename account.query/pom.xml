@@ -89,6 +89,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>accounts-queries-ms</finalName>
 	</build>
 
 </project>

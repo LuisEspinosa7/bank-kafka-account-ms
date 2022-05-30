@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  account-queries:
+    image: accounts-queries-ms:1.0
+    restart: always
+    container_name: "accounts-queries"
+    hostname: accounts-queries-host
+    ports:
+      - "5001:5001"
+   
+networks:
+  default:
+    external:
+      name: techbankNet

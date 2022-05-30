@@ -8,14 +8,16 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/bankAccount?createDatabaseIfNotExist=true
+    #url: jdbc:mysql://localhost:3306/bankAccount?createDatabaseIfNotExist=true
+    url: jdbc:mysql://mysql:3306/bankAccount?createDatabaseIfNotExist=true
     username: root
     password: techbankRootPsw
   kafka:
     listener:
       ack-mode: manual_immediate
     consumer:
-      bootstrap-servers: localhost:9092
+      #bootstrap-servers: localhost:9092 # Local Work
+      bootstrap-servers: kafka:9092 # Docker deployment
       group-id: bankaccConsumer
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer

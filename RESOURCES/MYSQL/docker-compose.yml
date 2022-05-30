@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    container_name: "mysql-container"
+    hostname: mysql-host
+    environment:
+      - MYSQL_ROOT_PASSWORD=techbankRootPsw
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data_container:/var/lib/mysql
+
+networks:
+  default:
+    external:
+      name: techbankNet
